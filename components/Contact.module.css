@@ -1,98 +1,115 @@
 /* components/Contact.module.css */
 
 .contact {
-    background-color: #f8f9fa; /* Un gris muy claro, similar al de Bootstrap, puedes ajustarlo */
-    padding: 2rem;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  background-color: #f8f9fa; /* Gris muy claro de fondo */
+  padding: 2rem;
+  min-height: 100vh; /* Ocupa al menos el 100% del viewport */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-content {
+  max-width: 600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.contact h2 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.contact p {
+  margin-bottom: 2rem;
+  text-align: justify;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column; /* Flujo principal en columna */
+  gap: 1rem;
+  width: 100%; /* Asegura que el formulario ocupe todo el ancho del contenedor */
+}
+
+.name-email-container {
+  display: flex; /* Para poner Nombre y Email uno al lado del otro */
+  gap: 1rem;
+  width: 100%;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  box-sizing: border-box; /* Incluye padding y border en el ancho */
+  width: 100%; /* Ancho completo por defecto (para el mensaje y el botón) */
+}
+
+.form-group.half-width { /* Clase para Nombre y Email */
+  width: calc(50% - 0.5rem); /* Ancho 50% menos la mitad del gap */
+}
+
+/* Media query para pantallas más pequeñas (Nombre y Email uno debajo del otro) */
+@media (max-width: 768px) {
+  .name-email-container {
+      flex-direction: column; /* Apila Nombre y Email en vertical */
   }
-  
-  .contact-content {
-    max-width: 600px; /* Ancho máximo del formulario/contenido */
-    width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
-    margin: 0 auto;
-    padding: 2rem;
-    background-color: white; /* Fondo blanco para el formulario */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+
+  .form-group.half-width {
+      width: 100%; /* Ocupan todo el ancho en móviles */
   }
-  
-  .contact h2 {
-    margin-bottom: 1rem;
-    text-align: center; /* Centra el título */
-  }
-  
-  .contact p {
-    margin-bottom: 2rem;
-    text-align: justify;
-  }
-  
-  .form-container {
-    display: flex;
-    flex-direction: column; /* Apila los elementos verticalmente por defecto */
-    gap: 1rem;
-    margin-bottom: 1.5rem;
-  }
-  
-  .form-group {
-    margin-bottom: 1.5rem;
-    width: 100%;
-  }
-  
-  .form-group label {
-    display: block;
-    margin-bottom: 0.5rem;
-    font-weight: 500;
-  }
-  
-  .form-control { /* Estilos para inputs y textarea */
-    width: 100%;
-    padding: 0.75rem;
-    border: 1px solid #ced4da; /* Un gris claro para el borde */
-    border-radius: 4px;
-    box-sizing: border-box;
-    font-size: 1rem;
-    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
-  
-  .form-control:focus {
-    outline: none;
-    border-color: #80bdff; /* Azul claro al enfocar */
-    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* Sombra al enfocar */
-  }
-  
-  textarea.form-control {
-    height: 120px;
-    resize: vertical; /* Permite redimensionar verticalmente */
-  }
-  
-  .btn-primary {
-      background-color: #007bff; /* Azul de Bootstrap */
-      color: white;
-      padding: 0.75rem 1.5rem;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 1rem;
-      transition: background-color 0.15s ease-in-out;
-      width: 100%;
-  }
-  
-  .btn-primary:hover {
-      background-color: #0069d9; /* Azul más oscuro al pasar el mouse */
-  }
-  
-  .btn-primary:focus {
-      outline: none;
-      box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
-  }
-  
-  /* Media Query para pantallas más pequeñas */
-  @media (max-width: 768px) {
-    .contact-content {
-      padding: 1rem;
-    }
-  }
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 1rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: #80bdff;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+textarea.form-control {
+  height: 120px;
+  resize: none; /* Impide que se redimensione el textarea */
+  width: 100%;
+}
+
+.btn-primary {
+  background-color: red; /* Botón rojo */
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.15s ease-in-out;
+  width: 100%; /* El botón ocupa todo el ancho */
+}
+
+.btn-primary:hover {
+  background-color: darkred; /* Rojo oscuro al pasar el mouse */
+}
+
+.error-message {
+  color: red;
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+}

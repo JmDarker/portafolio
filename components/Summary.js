@@ -21,7 +21,7 @@ const Summary = () => {
       <div className={styles['summary-content']}>
         <h2>Resumen</h2>
         <p>
-          Técnico en reparación de computadoras con experiencia en [menciona tu experiencia, ej: diagnóstico, mantenimiento y solución de problemas de hardware y software]. Apasionado por la tecnología y comprometido con brindar soluciones eficientes y de calidad.
+          Técnico en reparación de computadoras con experiencia en diagnóstico, mantenimiento y solución de problemas de hardware y software. Apasionado por la tecnología y comprometido con brindar soluciones eficientes y de calidad.
         </p>
         <h3>Habilidades Técnicas</h3>
         <ul className={styles['skills-list']}>
