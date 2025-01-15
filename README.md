@@ -13,21 +13,21 @@ Este repositorio contiene el código fuente de mi portafolio personal, una pági
 
 La estructura del proyecto es la siguiente:
 
-portfolio/
-├── components/         # Componentes reutilizables de React
-│   ├── Navbar.js       # Componente de la barra de navegación
-│   ├── Footer.js       # Componente del pie de página
-│   ├── Profile.js      # Componente de la sección de perfil
-│   ├── Summary.js      # Componente de la sección de resumen
-│   ├── Education.js    # Componente de la sección de educación
-│   ├── Work.js         # Componente de la sección de experiencia laboral
-│   └── Contact.js      # Componente de la sección de contacto
-├── pages/
-│   └── index.js        # Página principal del portafolio
-├── public/           # Archivos públicos (imágenes, fuentes, etc.)
-├── styles/
-│   └── globals.css     # Estilos globales (o archivos .module.css)
-└── package.json        # Archivo de configuración de npm/yarn
+portfolio/</br>
+├── components/         # Componentes reutilizables de React</br>
+│   ├── Navbar.js       # Componente de la barra de navegación</br>
+│   ├── Footer.js       # Componente del pie de página</br>
+│   ├── Profile.js      # Componente de la sección de perfil</br>
+│   ├── Summary.js      # Componente de la sección de resumen</br>
+│   ├── Education.js    # Componente de la sección de educación</br>
+│   ├── Work.js         # Componente de la sección de experiencia laboral</br>
+│   └── Contact.js      # Componente de la sección de contacto</br>
+├── pages/</br>
+│   └── index.js        # Página principal del portafolio</br>
+├── public/           # Archivos públicos (imágenes, fuentes, etc.)</br>
+├── styles/</br>
+│   └── globals.css     # Estilos globales (o archivos .module.css)</br>
+└── package.json        # Archivo de configuración de npm/yarn</br>
 
 ## Configuración e Instalación
 
