@@ -19,7 +19,7 @@ export default function Footer() {
           {/* Puedes agregar más enlaces aquí */}
         </div>
         <div className={styles['footer-social']}>
-          <a href="https://github.com/tuusuario" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/JmDarker" target="_blank" rel="noopener noreferrer">
             <Image src="/images/github-icon.png" alt="GitHub" width={25} height={25} /> {/* Usando Image */}
           </a>
           <a href="https://linkedin.com/in/tuperfil" target="_blank" rel="noopener noreferrer">
