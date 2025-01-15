@@ -7,26 +7,33 @@
   justify-content: center;
   min-height: 100vh;
   padding: 2rem;
-  background-color: #fff; /* O el color que prefieras */
+  background-color: #f8f9fa; /* Un gris claro de fondo */
 }
 
 .profile-content {
   max-width: 800px;
-  margin: 0 auto;
+  width: 100%;
   text-align: center;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .profile-image {
-  margin-bottom: 1rem; /* Margen inferior para separar la imagen del texto */
+  margin-bottom: 1rem;
 }
 
-.profileImage { /* Estilos específicos para la imagen */
+.profileImage {
   border-radius: 50%;
   object-fit: cover;
+  width: 200px; /* Ancho fijo para la imagen */
+  height: 200px; /* Alto fijo para la imagen */
 }
 
 .profile-info {
-  text-align: left; /* Alinea el texto a la izquierda */
+  text-align: left;
+  width: 100%; /* Asegura que la info ocupe todo el ancho */
 }
 
 .profile-info h1 {
@@ -44,24 +51,62 @@
 
 .profile-info p {
   line-height: 1.6;
-  margin-bottom: 1rem; /* Espacio entre párrafos */
+  margin-bottom: 1rem;
   text-align: justify;
 }
 
-.profile-contact {
-  margin-top: 1rem;
+.contact-info {
+  display: flex; /* Para la disposición horizontal */
+  justify-content: space-around; /* Distribuye el espacio entre los elementos */
+  align-items: center; /* Centra verticalmente */
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 600px; /* Ancho máximo para el contenedor de contacto */
+  margin: 2rem auto 0;
 }
 
-.profile-contact p {
-  margin-bottom: 0.25rem; /* Reduce el espaciado entre los elementos de contacto */
+.contact-item {
+  display: flex;
+  flex-direction: column; /* Para que el icono esté encima del texto en responsive */
+  align-items: center;
+  text-align: center; /* Centra el texto */
+  flex: 1; /* Distribuye el espacio disponible equitativamente */
+  min-width: 150px; /* Ancho mínimo para evitar que se aplasten */
 }
 
+.contact-icon {
+  margin-bottom: 0.5rem; /* Margen inferior para separar el icono del texto */
+  font-size: 1.5rem; /* Tamaño del icono */
+  color: #007bff;
+  text-align: center;
+}
+
+.contact-item a,
+.contact-item span {
+  text-decoration: none;
+  color: #333;
+  transition: color 0.3s ease;
+  word-break: break-word; /* Evita que las palabras largas rompan el diseño */
+}
+
+.contact-item a:hover {
+  color: #007bff;
+}
+
+/* Media query para pantallas pequeñas (volver a la disposición vertical) */
 @media (max-width: 768px) {
-  .profile-content {
-      padding: 1rem;
+  .contact-info {
+      flex-direction: column; /* Vuelve a la disposición vertical */
+      align-items: flex-start;
+      text-align: left;
   }
-  .profileImage {
-      max-width: 150px;
-      max-height: 150px;
+  .contact-item{
+      flex-direction: row;
+      text-align: left;
+      min-width: auto;
+  }
+  .contact-icon{
+      margin-bottom: 0;
+      margin-right: 1rem;
   }
 }
