@@ -45,8 +45,9 @@
 
 .form-group {
   margin-bottom: 1.5rem;
-  box-sizing: border-box; /* Incluye padding y border en el ancho */
-  width: 100%; /* Ancho completo por defecto (para el mensaje y el botón) */
+  box-sizing: border-box;
+  width: 100%;
+  position: relative; /* Importante: para posicionar el mensaje de error */
 }
 
 .form-group.half-width { /* Clase para Nombre y Email */
@@ -110,6 +111,11 @@ textarea.form-control {
 
 .error-message {
   color: red;
-  margin-top: 0.5rem;
   font-size: 0.875rem;
+  position: absolute; /* Posicionamiento absoluto */
+  bottom: -1.2rem; /* Ajusta la posición vertical */
+  left: 0;
+  width: 100%;
+  text-align: left; /* Alinea el texto a la izquierda */
+  min-height: 1.2rem; /* Reserva espacio vertical */
 }

@@ -52,9 +52,9 @@ export default function Contact() {
             newErrors.name = 'Por favor, ingresa tu nombre.';
         }
         if (!data.email) {
-            newErrors.email = 'Por favor, ingresa tu correo electrónico.';
+            newErrors.email = 'Por favor, ingresa tu correo.';
         } else if (!isValidEmail(data.email)) {
-            newErrors.email = 'Por favor, ingresa un correo electrónico válido.';
+            newErrors.email = 'Por favor, ingresa un correo válido.';
         }
         if (!data.message) {
             newErrors.message = 'Por favor, ingresa un mensaje.';
