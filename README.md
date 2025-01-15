@@ -1,40 +1,94 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Portafolio Personal
 
-## Getting Started
+Este repositorio contiene el código fuente de mi portafolio personal, una página web que muestra mi información, habilidades, experiencia y proyectos.
 
-First, run the development server:
+## Tecnologías Utilizadas
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+*   **Next.js:** Framework de React para la creación de aplicaciones web con renderizado del lado del servidor (SSR) y otras características.
+*   **React:** Librería de JavaScript para la construcción de interfaces de usuario.
+*   **CSS Modules (o CSS Global):** Para el estilado de la aplicación. (Dependiendo de cómo lo hayas implementado)
+*   **JavaScript (ES6+):** Lenguaje de programación principal.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Estructura del Proyecto
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+La estructura del proyecto es la siguiente:
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+portfolio/
+├── components/         # Componentes reutilizables de React
+│   ├── Navbar.js       # Componente de la barra de navegación
+│   ├── Footer.js       # Componente del pie de página
+│   ├── Profile.js      # Componente de la sección de perfil
+│   ├── Summary.js      # Componente de la sección de resumen
+│   ├── Education.js    # Componente de la sección de educación
+│   ├── Work.js         # Componente de la sección de experiencia laboral
+│   └── Contact.js      # Componente de la sección de contacto
+├── pages/
+│   └── index.js        # Página principal del portafolio
+├── public/           # Archivos públicos (imágenes, fuentes, etc.)
+├── styles/
+│   └── globals.css     # Estilos globales (o archivos .module.css)
+└── package.json        # Archivo de configuración de npm/yarn
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Configuración e Instalación
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Para ejecutar este proyecto localmente, sigue estos pasos:
 
-## Learn More
+1.  **Clonar el repositorio:**
 
-To learn more about Next.js, take a look at the following resources:
+    ```bash
+    git clone [se quitó una URL no válida]
+    ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
+2.  **Navegar al directorio del proyecto:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+    ```bash
+    cd portfolio
+    ```
 
-## Deploy on Vercel
+3.  **Instalar las dependencias:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+    ```bash
+    npm install  # o yarn install
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+4.  **Ejecutar el servidor de desarrollo:**
+
+    ```bash
+    npm run dev  # o yarn dev
+    ```
+
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el portafolio.
+
+## Despliegue (Deployment)
+
+Para desplegar este proyecto, puedes usar plataformas como Vercel, Netlify o AWS Amplify, que ofrecen integración sencilla con Next.js.
+
+*   **Vercel:** [https://vercel.com/](https://vercel.com/) (Recomendado para Next.js)
+*   **Netlify:** [https://www.netlify.com/](https://www.netlify.com/)
+*   **AWS Amplify:** [https://aws.amazon.com/amplify/](https://aws.amazon.com/amplify/)
+
+Sigue la documentación de la plataforma que elijas para configurar el despliegue.
+
+## Estructura de Componentes
+
+Cada sección del portafolio (Perfil, Resumen, Educación, etc.) está implementada como un componente separado en la carpeta `components`. Esto facilita la organización, el mantenimiento y la reutilización del código.
+
+## Estilos
+
+Los estilos generales se encuentran en `styles/globals.css`. Si utilizas CSS Modules, los estilos específicos de cada componente se encontrarán en archivos `.module.css` dentro de la carpeta `components`.
+
+## Navegación
+
+La navegación entre las secciones se realiza mediante la barra de navegación (`Navbar`) y el uso de `scrollIntoView` para un desplazamiento suave.
+
+## Personalización
+
+Puedes personalizar fácilmente el contenido, los estilos y la estructura del portafolio modificando los componentes en la carpeta `components` y los estilos en `styles/globals.css` (o tus archivos `.module.css`).
+
+## Créditos
+
+(Opcional) Si has utilizado alguna librería o recurso de terceros, puedes mencionarlos aquí.
+
+## Licencia
+
+(Opcional) Especifica la licencia bajo la que se distribuye tu proyecto (ej. MIT, GPL, etc.).
