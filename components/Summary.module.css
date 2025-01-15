@@ -1,0 +1,29 @@
+/* components/Summary.module.css */
+.summary {
+    background-color: #f0f0f0; /* Ejemplo de color de fondo, puedes cambiarlo */
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.summary-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.skills-list {
+  list-style-type: disc; /* Viñetas tipo disco */
+  padding-left: 20px; /* Espacio para las viñetas */
+  margin-top: 1rem;
+}
+
+.skills-list li {
+  margin-bottom: 0.5rem; /* Espacio entre los elementos de la lista */
+}
+
+.summary h2, .summary h3, .summary p {
+    text-align: left;
+}

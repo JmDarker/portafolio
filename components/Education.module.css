@@ -1,0 +1,55 @@
+/* components/Education.module.css */
+
+.education {
+    background-color: #fff;
+    padding: 2rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .education-content {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .education-item {
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+  }
+  
+  .education-item:last-child {
+      border-bottom: none;
+  }
+  
+  .education-item h3 {
+    margin-bottom: 0.5rem;
+  }
+  
+  .education-item h4 {
+    color: #777;
+    margin-bottom: 0.5rem;
+    font-style: italic;
+  }
+  
+  .education-period {
+    font-style: italic;
+    color: #999;
+    margin-bottom: 1rem;
+  }
+  
+  .education-description {
+      text-align: justify;
+  }
+  
+  /* Media Query para pantallas más pequeñas */
+  @media (max-width: 768px) {
+    .education-content {
+      padding: 1rem;
+    }
+  }

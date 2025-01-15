@@ -1,33 +1,38 @@
-export default function Education() {
-    const educationData = [
-      {
-        institution: 'Nombre de la Universidad/Institución',
-        degree: 'Título Obtenido (ej. Licenciatura en Informática)',
-        period: 'Año de Inicio - Año de Fin (o Actualidad)',
-        description: 'Breve descripción de tus estudios o enfoque principal.',
-      },
-      {
-        institution: 'Nombre del Curso/Certificación',
-        degree: 'Nombre del Curso/Certificación (ej. Desarrollo Web con React)',
-        period: 'Mes Año - Mes Año (o Actualidad)',
-        description: 'Descripción del curso y habilidades adquiridas.',
-      },
-      // Puedes agregar más entradas para otros estudios o certificaciones
-    ];
-  
-    return (
-      <section className="education">
-        <div className="education-content">
-          <h2>Educación</h2>
-          {educationData.map((item, index) => (
-            <div key={index} className="education-item">
-              <h3>{item.degree}</h3>
-              <h4>{item.institution}</h4>
-              <p className="education-period">{item.period}</p>
-              <p>{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-    );
-  }
+import React from 'react';
+import styles from './Education.module.css';
+
+const Education = () => {
+  const educationData = [
+    {
+      institution: 'Colegio Integrado de Fontibon',
+      degree: 'Bachiller Académico',
+      period: '2018',
+      description: 'Estudios de bachillerato académico.',
+    },
+    {
+      institution: 'SENA',
+      degree: 'Técnico en Mantenimiento de Equipos de Computo',
+      period: '2018 - 2019',
+      description: 'Formación técnica en mantenimiento preventivo y correctivo de equipos de cómputo, diagnóstico de fallas, ensamblaje y configuración de software y hardware.',
+    },
+    // Puedes agregar más entradas para otras instituciones educativas
+  ];
+
+  return (
+    <section className={styles.education}>
+      <div className={styles['education-content']}>
+        <h2>Formación Académica</h2>
+        {educationData.map((item, index) => (
+          <div key={index} className={styles['education-item']}>
+            <h3>{item.degree}</h3>
+            <h4>{item.institution}</h4>
+            <p className={styles['education-period']}>{item.period}</p>
+            <p className={styles['education-description']}>{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </section>
+  );
+};
+
+export default Education;

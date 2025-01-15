@@ -1,0 +1,67 @@
+/* components/Profile.module.css */
+
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 2rem;
+  background-color: #fff; /* O el color que prefieras */
+}
+
+.profile-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.profile-image {
+  margin-bottom: 1rem; /* Margen inferior para separar la imagen del texto */
+}
+
+.profileImage { /* Estilos específicos para la imagen */
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info {
+  text-align: left; /* Alinea el texto a la izquierda */
+}
+
+.profile-info h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.profile-info h2 {
+  color: #777;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.profile-info p {
+  line-height: 1.6;
+  margin-bottom: 1rem; /* Espacio entre párrafos */
+  text-align: justify;
+}
+
+.profile-contact {
+  margin-top: 1rem;
+}
+
+.profile-contact p {
+  margin-bottom: 0.25rem; /* Reduce el espaciado entre los elementos de contacto */
+}
+
+@media (max-width: 768px) {
+  .profile-content {
+      padding: 1rem;
+  }
+  .profileImage {
+      max-width: 150px;
+      max-height: 150px;
+  }
+}

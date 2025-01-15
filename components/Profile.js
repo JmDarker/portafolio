@@ -1,25 +1,27 @@
+import React from 'react';
 import Image from 'next/image';
+import styles from './Profile.module.css'; // Importa los estilos
 
-export default function Profile() {
+const Profile = () => {
   return (
-    <section className="profile">
-      <div className="profile-content">
-        <div className="profile-image">
+    <section className={styles.profile}> {/* Usa className con CSS Modules */}
+      <div className={styles['profile-content']}>
+        <div className={styles['profile-image']}>
           <Image
-            src="/images.jpg" // Ruta a tu imagen de perfil en la carpeta public
+            src="/images.jpg" // Ruta a tu imagen de perfil (en public/images)
             alt="Foto de Perfil"
-            width={200} // Ancho de la imagen
-            height={200} // Alto de la imagen
-            style={{ borderRadius: '50%', objectFit: 'cover' }} // Estilos para redondear la imagen
+            width={200}
+            height={200}
+            className={styles.profileImage} // Aplica estilos a la imagen
           />
         </div>
-        <div className="profile-info">
+        <div className={styles['profile-info']}>
           <h1>Juan Sebastian Munar Diaz</h1>
           <h2>Tecnico en Mantenimieto de Equipos de Computo</h2>
           <p>
-          Motivado por mi pasión por la tecnología, estoy constantemente explorando nuevas herramientas y conocimientos. Mi experiencia en hardware y software, combinada con mi proactividad, me permiten enfrentar desafíos técnicos y encontrar soluciones creativas. Aspiro a convertirme en un referente en el campo y contribuir al desarrollo de proyectos innovadores.
+            Motivado por mi pasión por la tecnología, estoy constantemente explorando nuevas herramientas y conocimientos. Mi experiencia en hardware y software, combinada con mi proactividad, me permiten enfrentar desafíos técnicos y encontrar soluciones creativas. Aspiro a convertirme en un referente en el campo y contribuir al desarrollo de proyectos innovadores.
           </p>
-          <div className="profile-contact">
+          <div className={styles['profile-contact']}>
             <p>Email: jsmd2499@outlook.com</p>
             <p>Teléfono: +57 3014310093</p>
             <p>Ubicación: Bogotá, Colombia</p>
@@ -28,4 +30,6 @@ export default function Profile() {
       </div>
     </section>
   );
-}
+};
+
+export default Profile;
