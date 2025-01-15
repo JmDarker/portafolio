@@ -1,92 +1,95 @@
 /* components/Navbar.module.css */
 
 .navbar {
-    background-color: #333; /* Color de fondo del navbar */
-    padding: 1rem 0;
-    position: fixed; /* Para que el navbar se mantenga fijo en la parte superior */
-    width: 100%;
-    top: 0;
-    z-index: 100; /* Asegura que el navbar esté por encima de otros elementos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
-  }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between; /* Espacia los elementos a los extremos */
-    align-items: center; /* Centra verticalmente los elementos */
-    max-width: 1200px;
-    margin: 0 auto; /* Centra el contenedor del navbar */
-    padding: 0 20px; /* Espaciado lateral */
-  }
-  
-  .navbar-brand {
-    color: white;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-  
+  background-color: #333; /* Color de fondo del navbar */
+  padding: 1rem 0; /* Padding arriba y abajo */
+  position: fixed; /* Navbar fijo en la parte superior */
+  width: 100%; /* Ancho completo */
+  top: 0; /* Pegado a la parte superior */
+  z-index: 100; /* Asegura que esté por encima de otros elementos */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+}
+
+.navbar-container {
+  display: flex; /* Usa flexbox para el diseño */
+  justify-content: space-between; /* Espacio entre el logo y el menú */
+  align-items: center; /* Centra verticalmente */
+  max-width: 1200px; /* Ancho máximo del contenedor */
+  margin: 0 auto; /* Centra horizontalmente */
+  padding: 0 20px; /* Espaciado lateral */
+}
+
+.navbar-brand {
+  color: white; /* Color del logo */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 1.2rem; /* Tamaño de fuente */
+}
+
+.navbar-menu {
+  list-style: none; /* Quita los puntos de la lista */
+  margin: 0;
+  padding: 0;
+  display: flex; /* Usa flexbox para los elementos del menú */
+}
+
+.navbar-item {
+  margin: 0 1rem; /* Espacio entre los elementos del menú */
+}
+
+.navbar-link {
+  color: white; /* Color inicial de los enlaces */
+  text-decoration: none; /* Quita el subrayado por defecto */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+  padding: 0.5rem 1rem; /* Espaciado interno para mejor UX */
+}
+
+/* Estilos para el hover y el enlace activo - SOLUCIÓN CLAVE */
+.navbar-menu .navbar-item .navbar-link:hover,
+.navbar-menu .navbar-item.active .navbar-link {
+  color: #007bff; /* Color azul al pasar el mouse o cuando está activo */
+  text-decoration: none; /* Asegura que no haya subrayado */
+}
+
+.navbar-toggle {
+  display: none; /* Oculto por defecto en pantallas grandes */
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 3px 0;
+  transition: transform 0.3s ease;
+}
+
+/* Media Query para pantallas más pequeñas (responsive) */
+@media (max-width: 768px) {
   .navbar-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
+    flex-direction: column; /* Menú en columna */
+    position: absolute; /* Posicionamiento absoluto */
+    top: 100%; /* Debajo del navbar */
+    left: 0;
+    width: 100%;
+    background-color: #333; /* Fondo oscuro */
+    display: none; /* Oculto por defecto */
   }
-  
+
+  .navbar-menu.active {
+    display: flex; /* Se muestra al hacer clic en el toggle */
+  }
+
   .navbar-item {
-    margin: 0 1rem; /* Espaciado entre los items del menú */
+    margin: 0;
+    padding: 1rem;
+    text-align: center; /* Texto centrado */
+    border-bottom: 1px solid #444; /* Separador entre elementos */
+    width: 100%;
   }
-  
-  .navbar-link {
-    color: white;
-    padding: 0.5rem 1rem;
-    transition: color 0.3s ease; /* Transición suave al pasar el mouse */
-  }
-  
-  .navbar-link:hover,
-  .navbar-item.active .navbar-link { /* Estilo para el link activo o al pasar el mouse */
-    color: #007bff; /* Un azul como ejemplo, puedes cambiarlo */
-  }
-  
+
   .navbar-toggle {
-    display: none; /* Oculto por defecto en pantallas grandes */
-    flex-direction: column;
-    cursor: pointer;
+    display: flex; /* Se muestra el botón hamburguesa */
+    padding: 1rem 20px;
   }
-  
-  .bar {
-    width: 25px;
-    height: 3px;
-    background-color: white;
-    margin: 3px 0;
-    transition: transform 0.3s ease;
-  }
-  
-  /* Media Query para pantallas más pequeñas (ejemplo: móviles) */
-  @media (max-width: 768px) {
-    .navbar-menu {
-      flex-direction: column;
-      position: absolute;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      background-color: #333;
-      display: none; /* Oculto por defecto en móviles */
-    }
-  
-    .navbar-menu.active { /* Se muestra al hacer clic en el toggle */
-      display: flex;
-    }
-  
-    .navbar-item {
-      margin: 0;
-      padding: 1rem;
-      text-align: center;
-      border-bottom: 1px solid #444; /* Línea divisoria entre items en móvil */
-      width: 100%; /* Ocupa todo el ancho disponible */
-    }
-  
-    .navbar-toggle {
-      display: flex; /* Se muestra el botón en móviles */
-      padding: 1rem 20px; /* Ajusta el padding para que sea consistente */
-    }
-  }
+}
