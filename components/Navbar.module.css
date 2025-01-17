@@ -1,57 +1,77 @@
 /* components/Navbar.module.css */
 
 .navbar {
-  background-color: #333; /* Color de fondo del navbar */
-  padding: 1rem 0; /* Padding arriba y abajo */
-  position: fixed; /* Navbar fijo en la parte superior */
-  width: 100%; /* Ancho completo */
-  top: 0; /* Pegado a la parte superior */
-  z-index: 100; /* Asegura que esté por encima de otros elementos */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra ligera */
+  background-color: #333;
+  padding: 1rem 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .navbar-container {
-  display: flex; /* Usa flexbox para el diseño */
-  justify-content: space-between; /* Espacio entre el logo y el menú */
-  align-items: center; /* Centra verticalmente */
-  max-width: 1200px; /* Ancho máximo del contenedor */
-  margin: 0 auto; /* Centra horizontalmente */
-  padding: 0 20px; /* Espaciado lateral */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .navbar-brand {
-  color: white; /* Color del logo */
-  font-weight: bold; /* Texto en negrita */
-  font-size: 1.2rem; /* Tamaño de fuente */
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
 }
 
 .navbar-menu {
-  list-style: none; /* Quita los puntos de la lista */
+  list-style: none;
   margin: 0;
   padding: 0;
-  display: flex; /* Usa flexbox para los elementos del menú */
+  display: flex;
 }
 
 .navbar-item {
-  margin: 0 1rem; /* Espacio entre los elementos del menú */
+  margin: 0 1rem;
 }
 
 .navbar-link {
-  color: white; /* Color inicial de los enlaces */
-  text-decoration: none; /* Quita el subrayado por defecto */
-  transition: color 0.3s ease; /* Transición suave para el cambio de color */
-  padding: 0.5rem 1rem; /* Espaciado interno para mejor UX */
+  color: white;
+  text-decoration: none; /* Elimina el subrayado predeterminado */
+  transition: color 0.3s ease; /* Transición suave para el color */
+  padding: 0.5rem 1rem;
+  position: relative; /* Para el subrayado animado */
 }
 
-/* Estilos para el hover y el enlace activo - SOLUCIÓN CLAVE */
-.navbar-menu .navbar-item .navbar-link:hover,
-.navbar-menu .navbar-item.active .navbar-link {
-  color: #007bff; /* Color azul al pasar el mouse o cuando está activo */
-  text-decoration: none; /* Asegura que no haya subrayado */
+/* Estilos para el HOVER (solo cambia el color y el cursor) */
+.navbar-link:hover {
+  color: #007bff;
+  cursor: pointer;
+}
+
+/* Estilos para el enlace ACTIVO (iluminado al hacer scroll) */
+.navbar-link.active {
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Subrayado animado para el enlace ACTIVO (SOLO ACTIVO) */
+.navbar-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #007bff;
+  transform: scaleX(1); /* Subrayado VISIBLE */
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .navbar-toggle {
-  display: none; /* Oculto por defecto en pantallas grandes */
+  display: none;
   flex-direction: column;
   cursor: pointer;
 }
@@ -67,29 +87,29 @@
 /* Media Query para pantallas más pequeñas (responsive) */
 @media (max-width: 768px) {
   .navbar-menu {
-    flex-direction: column; /* Menú en columna */
-    position: absolute; /* Posicionamiento absoluto */
-    top: 100%; /* Debajo del navbar */
-    left: 0;
-    width: 100%;
-    background-color: #333; /* Fondo oscuro */
-    display: none; /* Oculto por defecto */
+      flex-direction: column;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #333;
+      display: none;
   }
 
   .navbar-menu.active {
-    display: flex; /* Se muestra al hacer clic en el toggle */
+      display: flex;
   }
 
   .navbar-item {
-    margin: 0;
-    padding: 1rem;
-    text-align: center; /* Texto centrado */
-    border-bottom: 1px solid #444; /* Separador entre elementos */
-    width: 100%;
+      margin: 0;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #444;
+      width: 100%;
   }
 
   .navbar-toggle {
-    display: flex; /* Se muestra el botón hamburguesa */
-    padding: 1rem 20px;
+      display: flex;
+      padding: 1rem 20px;
   }
 }
