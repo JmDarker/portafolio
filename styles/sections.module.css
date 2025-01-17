@@ -1,10 +1,41 @@
 /* styles/sections.module.css */
+
+.mainContainer {
+  background-color: #f0f0f0; /* Color de fondo de la página */
+  padding: 2rem; /* Espacio entre el contenido y los bordes de la página */
+  min-height: 100vh; /* Asegura que el main ocupe al menos el 100% del alto de la pantalla */
+}
+
 .section {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  min-height: 100vh; /* Alto mínimo para que ocupen toda la pantalla */
   padding: 2rem;
   position: relative;
+  border-radius: 8px; /* Bordes redondeados */
+  box-sizing: border-box; /* Para que el padding no afecte el ancho */
+  margin-bottom: 2rem; /* Espacio entre secciones */
+  background-color: white; /* Fondo blanco para las secciones */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 90%; /* Ancho de las secciones */
+  max-width: 1200px; /* Ancho máximo para evitar que se extiendan demasiado */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .mainContainer{
+      padding: 1rem;
+  }
+  .section {
+      padding: 1rem; /* Reduce el padding en pantallas pequeñas */
+      margin-bottom: 1rem; /* Reduce el margen inferior */
+      width: 100%; /* Ocupan todo el ancho en pantallas pequeñas */
+      border-radius: 0; /* Quita el border-radius en pantallas pequeñas */
+      box-shadow: none; /* Quita la sombra en pantallas pequeñas */
+
+  }
 }
